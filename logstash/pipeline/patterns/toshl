@@ -2,5 +2,5 @@ TOSHLTIME (?!<[0-9])%{HOUR}:%{MINUTE}(?::%{SECOND})(?![0-9])
 TOSHLREQUESTID (requestid=)%{DATA:requestid}
 JBOSSCONTROLLERLOG %{DATE:date}%{SPACE}%{DATA:time}%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}\[%{DATA:classname}\]%{SPACE}\(%{WORD:taskname}\)%{SPACE}%{DATA:jobid}\:%{SPACE}%{GREEDYDATA:payload}
 TOSHLAPPEXCEPTION %{DATE:date}%{SPACE}%{DATA:time}%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}\[%{DATA:toshlclassname}\]%{SPACE}\[%{DATA:classname}\]%{SPACE}\(%{WORD:taskname}%{SPACE}%{DATA:taskid}\)%{SPACE}\[%{DATA:node}\]\[%{TOSHLREQUESTID:requestid}\]%{SPACE}%{GREEDYDATA:payload} 
-TOSHLAPPLOG %{DATE:date}%{SPACE}%{DATA:time}%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}\[%{DATA:toshlclassname}\]%{SPACE}\[%{DATA:classname}\]%{SPACE}\[node\=%{DATA:node}\]%{SPACE}\[requestId\=%{DATA:requestid}\]%{SPACE}\[clientId\=%{DATA:clientid}\]%{SPACE}\[userId\=%{DATA:userid}\]%{SPACE}%{GREEDYDATA:payload} 
+TOSHLAPPLOG %{DATE:date}%{SPACE}%{TIME:time}%{SPACE}%{LOGLEVEL:loglevel}%{SPACE}\[%{DATA:toshlclassname}\]%{SPACE}\[%{DATA:classname}\]%{SPACE}\[node\=%{DATA:node}\]%{SPACE}\[requestId\=%{DATA:requestid}\]%{SPACE}\[clientId\=%{DATA:clientid}\]%{SPACE}\[userId\=%{DATA:userid}\]%{SPACE}%{GREEDYDATA:payload}
 CUSTOMAPPEXCEPTION %{DATE:date}%{SPACE}%{DATA:time}%{SPACE}\[%{WORD:output}\]%{SPACE}\[%{DATA:classname}\]%{SPACE}\(%{WORD:taskname}%{SPACE}%{DATA:taskid}\)%{SPACE}%{JAVASTACKTRACEPART}
